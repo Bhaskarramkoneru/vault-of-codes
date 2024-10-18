@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editkaro.in - Portfolio</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1E3C72, #2A5298);
+            color: #ecf0f1;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: rgba(44, 62, 80, 0.9);
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            color: #e74c3c;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #e74c3c;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #c0392b;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Intro Section */
+        #intro {
+            background: linear-gradient(to right, #e74c3c, #f39c12);
+            color: white;
+            padding: 100px 0;
+        }
+
+        #intro h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        #intro p {
+            font-size: 20px;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #ecf0f1;
+            color: #e74c3c;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #e74c3c;
+            color: #fff;
+        }
+
+        /* Portfolio Section */
+        #portfolio {
+            background-color: #34495e;
+        }
+
+        .filter-nav {
+            margin-bottom: 30px;
+        }
+
+        .filter-nav button {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .filter-nav button:hover {
+            background-color: #c0392b;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .portfolio-item {
+            background-color: #1abc9c;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Video Styles */
+        .video-container {
+            position: relative;
+            overflow: hidden;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+        }
+
+        /* About Section */
+        #about {
+            background-color: #f39c12;
+            color: white;
+            padding: 40px 0;
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: #2c3e50;
+            color: white;
+            padding: 40px 0;
+        }
+
+        #contact form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        #contact form input, 
+        #contact form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        #contact form button {
+            background-color: #e74c3c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        #contact form button:hover {
+            background-color: #c0392b;
+        }
+
+        footer {
+            background-color: rgba(44, 62, 80, 0.9);
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Editkaro.in</h1>
+        <nav>
+            <ul>
+                <li><a href="#intro">Home</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="intro">
+        <h2>Welcome to Editkaro.in</h2>
+        <p>Your go-to agency for social media marketing and video editing services. Explore our work below.</p>
+        <a href="#portfolio" class="btn">Explore Portfolio</a>
+        <form id="email-form" style="margin-top: 20px;">
+            <input type="email" placeholder="Your Email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
+
+    <section id="portfolio">
+        <h2>Our Work</h2>
+        <div class="filter-nav">
+            <button class="filter-btn" data-category="all">All</button>
+            <button class="filter-btn" data-category="short-form">Short-Form Videos</button>
+            <button class="filter-btn" data-category="long-form">Long-Form Videos</button>
+            <button class="filter-btn" data-category="gaming">Gaming Videos</button>
+            <button class="filter-btn" data-category="football">Football Edits</button>
+            <button class="filter-btn" data-category="ecommerce">eCommerce Ads</button>
+            <button class="filter-btn" data-category="documentary">Documentary Style</button>
+            <button class="filter-btn" data-category="anime">Anime Videos</button>
+            <button class="filter-btn" data-category="ads">Ads</button>
+        </div>
+
+        <div class="portfolio-grid">
+            <div class="portfolio-item" data-category="short-form">
+                <h3>Short-Form Video</h3>
+                <p>Engaging clips designed for quick social media consumption.</p>
+                <div class="video-container">
+                    <video controls>
+                        <source src="videos/sample-short-form.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="long-form">
+                <h3>Long-Form Video</h3>
+                <p>In-depth storytelling that captivates audiences effectively.</p>
+                <div class="video-container">
+                    <video controls>
+                        <source src="videos/sample-long-form.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="gaming">
+                <h3>Gaming Video</h3>
+                <p>Exciting gaming montages that showcase thrilling gameplay.</p>
+                <div class="video-container">
+                    <video controls>
+                        <source src="videos/sample-gaming.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="football">
+                <h3>Football Edit</h3>
+                <p>Highlight reels capturing the best moments in football.</p>
+                <div class="video-container">
+                    <video controls>
+                        <source src="videos/sample-football.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="ecommerce">
+                <h3>eCommerce Ad</h3>
+                <p>Dynamic ads designed to showcase products appealingly.</p>
+                <div class="video-container">
+                    <video controls>
+                        <source src="videos/sample-ecommerce.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="documentary">
+                <h3>Documentary Style</h3>
+                <p>Compelling documentaries that tell engaging stories.</p>
+                <div class="video-container">
+                    <video controls>
+                        <source src="videos/sample-documentary.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="anime">
+                <h3>Anime Video</h3>
+                <p>Creative edits featuring popular anime series.</p>
+                <div class="video-container">
+                    <video controls>
+                        <source src="videos/sample-anime.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="ads">
+                <h3>Ad Video</h3>
+                <p>Impactful advertisements designed to engage viewers.</p>
+                <div class="video-container">
+                    <video controls>
+                        <source src="videos/sample-ad.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>At Editkaro.in, we specialize in providing top-notch social media marketing and video editing services. Our mission is to help brands connect with their audiences through captivating visuals and compelling narratives. Our team of experienced professionals is dedicated to delivering high-quality content tailored to your specific needs.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <input type="tel" placeholder="Your Phone" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Editkaro.in. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Handle Email Subscription
+        document.getElementById('email-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = e.target[0].value;
+            fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
+                method: 'POST',
+                body: JSON.stringify({ email }),
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Thank you for subscribing!');
+                e.target.reset();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error. Please try again later.');
+            });
+        });
+
+        // Handle Contact Form Submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = {
+                name: e.target[0].value,
+                email: e.target[1].value,
+                phone: e.target[2].value,
+                message: e.target[3].value,
+            };
+            fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
+                method: 'POST',
+                body: JSON.stringify(formData),
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Message sent successfully!');
+                e.target.reset();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error sending your message. Please try again later.');
+            });
+        });
+
+        // Filter Portfolio Items
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const category = button.getAttribute('data-category');
+                portfolioItems.forEach(item => {
+                    if (category === 'all' || item.getAttribute('data-category') === category) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
